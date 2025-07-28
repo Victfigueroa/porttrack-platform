@@ -25,7 +25,7 @@ jobs:
 
       - name: Ejecutar pruebas unitarias (pytest)
         run: |
-          pytest backend/tests --maxfail=1 --disable-warnings -q
+          PYTHONPATH=backend pytest backend/tests --maxfail=1 --disable-warnings -q
 
       - name: Construir imagen Docker
         run: |
@@ -60,4 +60,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend
 
- 
