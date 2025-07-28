@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write   # ✅ Permiso necesario para publicar en gh-pages
+
 jobs:
   backend-ci:
     name: CI Backend (Python + Docker)
