@@ -1,19 +1,21 @@
-# Imagen base ligera de Python
+# Imagen base
 FROM python:3.11-slim
 
-# Configuraciones básicas
+# Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar dependencias e instalarlas
+# Copiar dependencias
 COPY requirements.txt .
+
+# Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiar el código del backend
+# Copiar código fuente
 COPY . .
 
-# Exponer el puerto Flask
+# Exponer puerto
 EXPOSE 5000
 
 # Comando de ejecución
 CMD ["python", "app.py"]
- 
+
